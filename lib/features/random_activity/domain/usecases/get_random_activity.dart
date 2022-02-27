@@ -9,7 +9,7 @@ class GetRandomActivity {
   final RandomActivityRepository repository;
   GetRandomActivity(this.repository);
 
-  Future<Either<Failure, RandomActivity>?> call(NoParams params) async {
+  Future<Either<Failure, RandomActivity?>?> call(NoParams params) async {
     return await repository.getRandomActivity();
   }
 }
