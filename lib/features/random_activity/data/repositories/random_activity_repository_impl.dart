@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/connection/network_info.dart';
@@ -29,7 +27,7 @@ class RandomActivityRepositoryImpl implements RandomActivityRepository {
         localDataSource.cacheRandomActivity(remoteActivity);
 
         /// RandomActivity
-        return Right(await remoteDataSource.getRandomActivity());
+        return Right(remoteActivity);
       } on ServerException {
         return Left(ServerFailure(errorMessage: 'This is a server exception'));
       }

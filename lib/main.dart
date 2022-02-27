@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:random_activities/features/random_activity/display/provider/random_activity_provider.dart';
 import 'package:random_activities/features/random_activity/display/provider/selected_page_provider.dart';
 
 import 'features/random_activity/display/pages/landing_page.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SelectedPageProvider()),
+        ChangeNotifierProvider(create: (context) => RandomActivityProvider())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

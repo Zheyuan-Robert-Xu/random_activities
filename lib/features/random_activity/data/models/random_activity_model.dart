@@ -1,4 +1,4 @@
-import 'package:random_activities/features/random_activity/domain/entities/random_activity.dart';
+import '../../domain/entities/random_activity.dart';
 
 class RandomActivityModel extends RandomActivity {
   const RandomActivityModel({
@@ -18,14 +18,17 @@ class RandomActivityModel extends RandomActivity {
           key: key,
           accessibility: accessibility,
         );
+
   factory RandomActivityModel.fromJson(Map<String, dynamic> json) {
     return RandomActivityModel(
-        activity: json['activity'],
-        type: json['type'],
-        participants: json['participants'],
-        price: json['price'],
-        link: json['link'],
-        accessibility: json['accessibility']);
+      activity: json['activity'],
+      type: json['type'],
+      participants: json['participants'],
+      price: (json['price'] as num).toDouble(),
+      link: json['link'],
+      key: json['key'],
+      accessibility: (json['accessibility'] as num).toDouble(),
+    );
   }
 
   Map<String, dynamic> toJson() {

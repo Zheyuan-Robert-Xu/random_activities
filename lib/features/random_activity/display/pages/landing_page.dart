@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
-//Todo: Add the provider eitherFailureOrActivity.
-
-//import '../provider/random_activity_provider.dart';
-
+import '../provider/random_activity_provider.dart';
 import '../widgets/widgets.dart';
 
 class LandingPage extends StatelessWidget {
@@ -19,7 +15,7 @@ class LandingPage extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: Image.asset(
-              'images/water_bg.jpeg',
+              'images/water_bg.jpg',
               fit: BoxFit.cover,
               alignment: Alignment.topCenter,
             ),
@@ -52,12 +48,8 @@ class LandingPage extends StatelessWidget {
                 textColor: Colors.black,
                 iconColor: Colors.orangeAccent,
                 callback: () {
-                  //Todo: Add the provider eitherFailureOrActivity.
-
-                  //Provider.of<RandomActivityProvider>(context, listen: false)
-
-                  //    .eitherFailureOrActivity();
-
+                  Provider.of<RandomActivityProvider>(context, listen: false)
+                      .eitherFailureOrActivity();
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const SkeletonWidget(),

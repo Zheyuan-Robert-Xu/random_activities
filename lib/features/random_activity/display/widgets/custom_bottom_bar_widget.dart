@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:random_activities/features/random_activity/display/provider/selected_page_provider.dart';
 
 //Todo: Add the provider SelectedPageProvider
 
@@ -13,10 +14,7 @@ class CustomBottomBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Todo: Add the provider SelectedPageProvider
-
-    int selectedPage =
-        0; // = Provider.of<SelectedPageProvider>(context).selectedPage;
+    int selectedPage = Provider.of<SelectedPageProvider>(context).selectedPage;
 
     return BottomAppBar(
       child: Column(
@@ -44,11 +42,8 @@ class CustomBottomBarWidget extends StatelessWidget {
                 iconDataSelected: Icons.search_outlined,
                 iconDataUnselected: Icons.search_outlined,
                 callback: () {
-                  //Todo: Add the provider SelectedPageProvider
-
-                  // Provider.of<SelectedPageProvider>(context, listen: false)
-
-                  //     .changePage(0);
+                  Provider.of<SelectedPageProvider>(context, listen: false)
+                      .changePage(0);
                 },
                 isSelected: selectedPage == 0,
               ),
@@ -56,11 +51,8 @@ class CustomBottomBarWidget extends StatelessWidget {
                 iconDataSelected: Icons.menu,
                 iconDataUnselected: Icons.menu,
                 callback: () {
-                  //Todo: Add the provider SelectedPageProvider
-
-                  // Provider.of<SelectedPageProvider>(context, listen: false)
-
-                  //     .changePage(1);
+                  Provider.of<SelectedPageProvider>(context, listen: false)
+                      .changePage(1);
                 },
                 isSelected: selectedPage == 1,
               ),
