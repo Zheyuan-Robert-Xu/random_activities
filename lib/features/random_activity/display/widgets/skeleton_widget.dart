@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:random_activities/features/random_activity/display/pages/legalese_page.dart';
+import 'package:random_activities/features/random_activity/display/pages/random_activity_page.dart';
 
 //Todo: Add imports
 
@@ -14,13 +16,7 @@ import 'package:provider/provider.dart';
 
 import 'custom_bottom_bar_widget.dart';
 
-List<Widget> pages = const [
-  //Todo: Add the Pages
-
-  //BuildBody(),
-
-  //IdeaPage(),
-];
+List<Widget> pages = const [RandomActivityPage(), LegalesePage()];
 
 class SkeletonWidget extends StatelessWidget {
   const SkeletonWidget({Key? key}) : super(key: key);
